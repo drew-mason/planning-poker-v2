@@ -26,7 +26,7 @@
 
 ### Technical Requirements
 1. **ServiceNow Integration**
-   - Scoped application (`u_planning_poker_v2`)
+   - Scoped application (`x_1447726_planni_0`)
    - Responsive UI using ServiceNow UI framework
    - Real-time updates using GlideAjax or WebSockets
 
@@ -44,15 +44,15 @@
 ## 🔧 Technical Architecture
 
 ### Tables Structure
-- `u_planning_poker_v2_planning_session`
-- `u_planning_poker_v2_planning_vote` 
-- `u_planning_poker_v2_session_stories`
-- `u_planning_poker_v2_scoring_method`
+- `x_1447726_planni_0_planning_session`
+- `x_1447726_planni_0_planning_vote` 
+- `x_1447726_planni_0_session_stories`
+- `x_1447726_planni_0_scoring_method`
 
 ### Roles
-- `u_planning_poker_v2_voter`
-- `u_planning_poker_v2_facilitator` 
-- `u_planning_poker_v2_admin`
+- `x_1447726_planni_0_voter`
+- `x_1447726_planni_0_facilitator` 
+- `x_1447726_planni_0_admin`
 
 ### UI Components
 - Session management dashboard

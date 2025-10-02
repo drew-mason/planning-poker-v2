@@ -5,7 +5,7 @@ Interactive Planning Poker application for agile story point estimation in Servi
 
 ## 📋 Project Details
 - **Application Name:** Planning Poker v2
-- **Scope:** `u_planning_poker_v2`
+- **Scope:** `x_1447726_planni_0`
 - **Version:** 2.0.0
 - **Repository:** https://github.com/[your-username]/planning-poker-v2
 - **ServiceNow Instance:** https://dev287878.service-now.com
