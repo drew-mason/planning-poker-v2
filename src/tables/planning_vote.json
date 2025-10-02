@@ -1,0 +1,54 @@
+{
+  "name": "x_1447726_planni_0_planning_vote",
+  "label": "Planning Vote",
+  "extends": "",
+  "fields": [
+    {
+      "name": "session",
+      "type": "reference",
+      "label": "Planning Session",
+      "reference": "x_1447726_planni_0_planning_session",
+      "mandatory": true
+    },
+    {
+      "name": "story",
+      "type": "reference", 
+      "label": "Story",
+      "reference": "x_1447726_planni_0_session_stories",
+      "mandatory": true
+    },
+    {
+      "name": "voter",
+      "type": "reference",
+      "label": "Voter",
+      "reference": "sys_user", 
+      "mandatory": true
+    },
+    {
+      "name": "vote_value",
+      "type": "string",
+      "label": "Vote Value",
+      "max_length": 10,
+      "mandatory": true
+    },
+    {
+      "name": "vote_time",
+      "type": "glide_date_time",
+      "label": "Vote Time",
+      "mandatory": true
+    },
+    {
+      "name": "is_final_vote",
+      "type": "boolean",
+      "label": "Final Vote",
+      "default": false
+    }
+  ],
+  "indexes": [
+    {
+      "name": "session_story_voter",
+      "fields": ["session", "story", "voter"],
+      "unique": true
+    }
+  ]
+}

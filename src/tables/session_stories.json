@@ -1,0 +1,73 @@
+{
+  "name": "x_1447726_planni_0_session_stories",
+  "label": "Session Stories", 
+  "extends": "",
+  "fields": [
+    {
+      "name": "session",
+      "type": "reference",
+      "label": "Planning Session",
+      "reference": "x_1447726_planni_0_planning_session",
+      "mandatory": true
+    },
+    {
+      "name": "story_number",
+      "type": "string",
+      "label": "Story Number",
+      "max_length": 50
+    },
+    {
+      "name": "story_title", 
+      "type": "string",
+      "label": "Story Title",
+      "max_length": 200,
+      "mandatory": true
+    },
+    {
+      "name": "story_description",
+      "type": "string",
+      "label": "Story Description", 
+      "max_length": 4000
+    },
+    {
+      "name": "acceptance_criteria",
+      "type": "string",
+      "label": "Acceptance Criteria",
+      "max_length": 4000
+    },
+    {
+      "name": "story_points",
+      "type": "string",
+      "label": "Final Story Points",
+      "max_length": 10
+    },
+    {
+      "name": "status",
+      "type": "choice",
+      "label": "Status",
+      "choices": [
+        {"label": "Pending", "value": "pending"},
+        {"label": "Voting", "value": "voting"},
+        {"label": "Completed", "value": "completed"},
+        {"label": "Skipped", "value": "skipped"}
+      ],
+      "default": "pending"
+    },
+    {
+      "name": "order",
+      "type": "integer", 
+      "label": "Display Order",
+      "default": 100
+    },
+    {
+      "name": "voting_started",
+      "type": "glide_date_time",
+      "label": "Voting Started"
+    },
+    {
+      "name": "voting_completed",
+      "type": "glide_date_time", 
+      "label": "Voting Completed"
+    }
+  ]
+}

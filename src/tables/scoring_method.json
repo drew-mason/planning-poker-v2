@@ -1,0 +1,47 @@
+{
+  "name": "x_1447726_planni_0_scoring_method",
+  "label": "Scoring Method",
+  "extends": "",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string", 
+      "label": "Method Name",
+      "max_length": 100,
+      "mandatory": true,
+      "unique": true
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "label": "Description", 
+      "max_length": 4000
+    },
+    {
+      "name": "values",
+      "type": "string",
+      "label": "Valid Values",
+      "max_length": 500,
+      "mandatory": true,
+      "help_text": "Comma-separated list of valid voting values (e.g., 1,2,3,5,8,13,21)"
+    },
+    {
+      "name": "is_default",
+      "type": "boolean",
+      "label": "Default Method", 
+      "default": false
+    },
+    {
+      "name": "active",
+      "type": "boolean",
+      "label": "Active",
+      "default": true
+    },
+    {
+      "name": "allow_custom_values",
+      "type": "boolean",
+      "label": "Allow Custom Values",
+      "default": false
+    }
+  ]
+}
