@@ -1,0 +1,42 @@
+{
+  "name": "planning-poker-v2",
+  "version": "2.0.0",
+  "description": "Interactive Planning Poker application for agile story point estimation in ServiceNow",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/**/*.js",
+    "build": "echo \"Build process for ServiceNow components\"",
+    "deploy": "snc app deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/[your-username]/planning-poker-v2.git"
+  },
+  "keywords": [
+    "servicenow",
+    "planning-poker",
+    "agile",
+    "scrum",
+    "estimation",
+    "story-points"
+  ],
+  "author": "Andrew Mason",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/[your-username]/planning-poker-v2/issues"
+  },
+  "homepage": "https://github.com/[your-username]/planning-poker-v2#readme",
+  "devDependencies": {
+    "eslint": "^8.0.0"
+  },
+  "servicenow": {
+    "scope": "u_planning_poker_v2",
+    "instance": "dev287878.service-now.com",
+    "application": {
+      "name": "Planning Poker v2",
+      "version": "2.0.0",
+      "description": "Interactive Planning Poker application for agile story point estimation"
+    }
+  }
+}
