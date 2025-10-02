@@ -1,0 +1,17 @@
+[
+  {
+    "name": "x_1447726_planni_0_voter",
+    "description": "Planning Poker Voter - Can participate in voting sessions",
+    "assignable_by": "x_1447726_planni_0_facilitator,x_1447726_planni_0_admin"
+  },
+  {
+    "name": "x_1447726_planni_0_facilitator", 
+    "description": "Planning Poker Facilitator - Can create and manage planning sessions",
+    "assignable_by": "x_1447726_planni_0_admin"
+  },
+  {
+    "name": "x_1447726_planni_0_admin",
+    "description": "Planning Poker Administrator - Full administrative access to planning poker",
+    "assignable_by": "admin"
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "name": "x_1447726_planni_0_planning_session",
+  "label": "Planning Session",
+  "extends": "task",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string",
+      "label": "Session Name",
+      "max_length": 100,
+      "mandatory": true
+    },
+    {
+      "name": "description", 
+      "type": "string",
+      "label": "Description",
+      "max_length": 4000
+    },
+    {
+      "name": "facilitator",
+      "type": "reference",
+      "label": "Facilitator", 
+      "reference": "sys_user",
+      "mandatory": true
+    },
+    {
+      "name": "status",
+      "type": "choice",
+      "label": "Status",
+      "choices": [
+        {"label": "Active", "value": "active"},
+        {"label": "Completed", "value": "completed"}, 
+        {"label": "Cancelled", "value": "cancelled"}
+      ],
+      "default": "active"
+    },
+    {
+      "name": "scoring_method",
+      "type": "reference",
+      "label": "Scoring Method",
+      "reference": "x_1447726_planni_0_scoring_method"
+    }
+  ]
+}
