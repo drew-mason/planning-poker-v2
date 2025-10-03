@@ -1,0 +1,17 @@
+{
+  "choice": 3,
+  "column_label": "State",
+  "column_name": "state",
+  "element": "state",
+  "internal_type": {
+    "display_value": "Choice",
+    "value": "integer"
+  },
+  "mandatory": false,
+  "max_length": 40,
+  "name": "x_1447726_planni_0_planning_session",
+  "read_only": false,
+  "table": "x_1447726_planni_0_planning_session",
+  "text_index": false,
+  "default_value": "draft"
+}

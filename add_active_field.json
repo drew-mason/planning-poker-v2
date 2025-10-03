@@ -1,0 +1,16 @@
+{
+  "column_label": "Active",
+  "column_name": "active",
+  "element": "active",
+  "internal_type": {
+    "display_value": "True/False",
+    "value": "boolean"
+  },
+  "mandatory": false,
+  "max_length": 40,
+  "name": "x_1447726_planni_0_planning_session",
+  "read_only": false,
+  "table": "x_1447726_planni_0_planning_session",
+  "text_index": false,
+  "default_value": "false"
+}
