@@ -257,7 +257,7 @@
             }
             
             // Make AJAX call to get session data
-            var ajax = new GlideAjax('PlanningPokerAjax');
+            var ajax = new GlideAjax('x_1447726_planni_0.PlanningPokerAjax');
             ajax.addParam('sysparm_name', 'getSession');
             ajax.addParam('sysparm_session_id', sessionId);
             ajax.getXMLAnswer(function(response) {
@@ -291,7 +291,7 @@
         
         // Load participants
         function loadParticipants() {
-            var ajax = new GlideAjax('PlanningPokerAjax');
+            var ajax = new GlideAjax('x_1447726_planni_0.PlanningPokerAjax');
             ajax.addParam('sysparm_name', 'getParticipants');
             ajax.addParam('sysparm_session_id', currentSession.sys_id);
             ajax.getXMLAnswer(function(response) {
@@ -338,7 +338,7 @@
         
         // Load current story
         function loadCurrentStory() {
-            var ajax = new GlideAjax('PlanningPokerAjax');
+            var ajax = new GlideAjax('x_1447726_planni_0.PlanningPokerAjax');
             ajax.addParam('sysparm_name', 'getCurrentStory');
             ajax.addParam('sysparm_session_id', currentSession.sys_id);
             ajax.getXMLAnswer(function(response) {
@@ -393,7 +393,7 @@
                 return;
             }
             
-            var ajax = new GlideAjax('PlanningPokerAjax');
+            var ajax = new GlideAjax('x_1447726_planni_0.PlanningPokerAjax');
             ajax.addParam('sysparm_name', 'castVote');
             ajax.addParam('sysparm_story_id', currentStory.sys_id);
             ajax.addParam('sysparm_vote_value', value);
@@ -431,7 +431,7 @@
         
         // Load votes
         function loadVotes() {
-            var ajax = new GlideAjax('PlanningPokerAjax');
+            var ajax = new GlideAjax('x_1447726_planni_0.PlanningPokerAjax');
             ajax.addParam('sysparm_name', 'getVotes');
             ajax.addParam('sysparm_story_id', currentStory.sys_id);
             ajax.getXMLAnswer(function(response) {
@@ -458,7 +458,7 @@
         function startVoting() {
             if (!isFacilitator) return;
             
-            var ajax = new GlideAjax('PlanningPokerAjax');
+            var ajax = new GlideAjax('x_1447726_planni_0.PlanningPokerAjax');
             ajax.addParam('sysparm_name', 'startVoting');
             ajax.addParam('sysparm_story_id', currentStory.sys_id);
             ajax.getXMLAnswer(function(response) {
@@ -474,7 +474,7 @@
         function revealVotes() {
             if (!isFacilitator) return;
             
-            var ajax = new GlideAjax('PlanningPokerAjax');
+            var ajax = new GlideAjax('x_1447726_planni_0.PlanningPokerAjax');
             ajax.addParam('sysparm_name', 'revealVotes');
             ajax.addParam('sysparm_story_id', currentStory.sys_id);
             ajax.getXMLAnswer(function(response) {
@@ -491,7 +491,7 @@
             if (!isFacilitator) return;
             
             if (confirm('Are you sure you want to reset voting for this story?')) {
-                var ajax = new GlideAjax('PlanningPokerAjax');
+                var ajax = new GlideAjax('x_1447726_planni_0.PlanningPokerAjax');
                 ajax.addParam('sysparm_name', 'resetVoting');
                 ajax.addParam('sysparm_story_id', currentStory.sys_id);
                 ajax.getXMLAnswer(function(response) {
@@ -513,7 +513,7 @@
         function nextStory() {
             if (!isFacilitator) return;
             
-            var ajax = new GlideAjax('PlanningPokerAjax');
+            var ajax = new GlideAjax('x_1447726_planni_0.PlanningPokerAjax');
             ajax.addParam('sysparm_name', 'nextStory');
             ajax.addParam('sysparm_session_id', currentSession.sys_id);
             ajax.getXMLAnswer(function(response) {
