@@ -300,3 +300,73 @@ api.data.fetchSession = async () => {
 - Extend the workspace with analytics widgets (e.g., average velocity per session) using Zurich’s ready-to-use dashboard components.
 
 > **You’re done!** Your Zurich PDI now hosts a functional Planning Poker application built entirely from in-platform tools, with a modern experience and real-time updates.
+
+---
+
+## 🔧 Appendix – ServiceNow CLI setup (Zurich)
+Follow this runbook as soon as your new Zurich PDI is online so we can deploy and verify changes straight from the repo.
+
+### 1. Install or upgrade the CLI
+- Ensure Node.js 16+ is installed.
+- Run:
+   ```bash
+   npm install -g @servicenow/cli
+   snc --version
+   ```
+   You should see the CLI version print out (Zurich-compatible releases are 3.0+).
+
+### 2. Gather instance credentials
+- Instance URL (e.g., `https://<instance>.service-now.com`)
+- Admin or App Engine admin username & password (consider creating a dedicated integration user later)
+- Optional: Personal Access Token if your org requires it instead of password auth
+
+### 3. Authenticate and create a profile
+```bash
+snc auth login --instance <instance-name> \
+                      --username <user> \
+                      --password <password>
+```
+- The CLI stores credentials in `~/.snc`. Give the profile a short name when prompted (for example, `poker-zurich`).
+- Verify the profile:
+   ```bash
+   snc auth list
+   ```
+   You should see your new profile marked as `default` or available.
+
+### 4. Link the repo to that profile
+From the repo root (`planning-poker-v2/`):
+```bash
+snc project configure --profile <profile-name>
+```
+- This wires the scoped app metadata (from `sn_source_control.properties`) to the instance.
+- Confirm status:
+   ```bash
+   snc project status
+   ```
+   Expect “No changes” or a list of local files ready to push.
+
+### 5. First pull / sanity check
+- If your new instance is empty, run:
+   ```bash
+   snc project pull
+   ```
+   This ensures CLI connectivity and fetches any on-instance artifacts (should be none right after reset).
+- If prompted about conflicts, choose “local” to keep the repository as the source of truth.
+
+### 6. Push the planning poker app when ready
+```bash
+npm install            # optional; enables lint scripts
+snc project preview    # shows diff between repo and instance
+snc project deploy     # pushes metadata to instance
+```
+- Watch the CLI output; it will list each app file promoted. If any record fails, re-run with `--verbose` for details.
+
+### 7. Verify in the instance
+- Log into Studio → open your scoped app → confirm files appear under Source Control history.
+- Run the diagnostics script (`src/diagnostics/discover_planning_poker_v2.js`) to double-check tables, roles, and menus.
+
+### 8. Keep credentials healthy
+- Use `snc auth refresh <profile>` if the token expires.
+- For multiple environments (QA, prod), run `snc auth login` again with different profile names (`poker-qa`, `poker-prod`) and switch via `snc project configure --profile <name>` before deploying.
+
+> **Tip:** If you need to automate this later, add the CLI steps to a CI pipeline. Zurich’s DevOps app can monitor these deployments and enforce health scans before promotion.
